@@ -1,0 +1,9 @@
+.app-header {
+    &__container {
+        height: 40px;
+        background-color: var(--ion-color-primary);
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+}

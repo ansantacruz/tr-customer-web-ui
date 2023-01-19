@@ -1,0 +1,9 @@
+.app-card {
+    &__container {
+        width: 100%;
+        min-height: 100px;
+        padding: 10px 10px;
+        background-color: var(--ion-card-background);
+        border-bottom: 1px solid var(--ion-color-light-shade);
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "turepuesto.com",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "67925d00"
+}

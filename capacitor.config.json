@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "turepuesto.com",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

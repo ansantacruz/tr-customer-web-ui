@@ -1,0 +1,41 @@
+<main class="app-ofertas-tab__container">
+  <!-- Header de la pantalla con nombre del APP  -->
+  <app-header></app-header>
+  <!-- Seccion de filtros  -->
+  <section class="app-ofertas-tab__container__filtros">
+    <!-- Boton Ordenar -->
+    <div>
+      <ion-button fill="clear"> <ion-icon name="swap-vertical-outline"></ion-icon> Ordenar </ion-button>
+    </div>
+    <!-- Separador-->
+    <div class="app-ofertas-tab__container__filtros__division"></div>
+    <!-- Cantidad de ofertas recibidads -->
+    <div>
+      <span> {{ ofertas.ofertas.length }} ofertas recibidas </span>
+    </div>
+  </section>
+
+  <!-- Listado de ofertas recibidas -->
+  <section class="app-ofertas-tab__container__ofertas">
+      <app-card *ngFor="let oferta of ofertas.ofertas">
+        <section class="app-ofertas-tab__container__ofertas__oferta">
+
+            <section class="app-ofertas-tab__container__ofertas__oferta__avatar">
+                <ion-avatar>
+                  <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                </ion-avatar>
+            </section>
+    
+          <section class="app-ofertas-tab__container__ofertas__oferta__datos-oferta">
+            <div    class="app-ofertas-tab__container__ofertas__oferta__datos-oferta__autor" >{{oferta.autor.nombre}}</div>
+            <app-tag   [mensaje]="oferta.autor.calificacion.toString()"></app-tag>
+            <span class="app-ofertas-tab__container__ofertas__oferta__datos-oferta__precio">{{currencyFormat(oferta.ofertaRealizada.valorOferta)}}</span>
+
+            <div> <strong>Oferta todo:</strong> {{oferta.ofertaRealizada.ofertaTodo}} </div>
+            <div> <strong>Negociable:</strong> {{oferta.ofertaRealizada.negociable}} </div>
+          </section>
+        </section>
+      </app-card>
+
+  </section>
+</main>
