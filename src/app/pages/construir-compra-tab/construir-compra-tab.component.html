@@ -1,4 +1,68 @@
 <main class="app-construir-compra-tab__container">
+  <header class="app-construir-compra-tab__container__header">ESTE ES EL HEADER Y NO SE QUE VA ACA</header>
 
-  <img src="https://c.tenor.com/FEpvzyvZbhkAAAAC/callate-y-toma-mi-dinero.gif">
+  <article class="app-construir-compra-tab__container__search-assistant">
+    <article class="--step-view " [ngSwitch]="ACTUA_STEP">
+      <!-- Primer filtro de busqueda -->
+      <section class="app-construir-compra-tab__container__search-assistant__view-by-step" *ngSwitchCase="FIRST_STEP">
+        <app-card (clickEvent)="clic(SECOND_STEP_SPARE_PARTS)" *ngFor="let item of producTypes; index as i">
+          <section class="app-construir-compra-tab__container__search-assistant__view-by-step__data">
+            <ion-avatar> <img [src]="item.productLogo" /> </ion-avatar>
+            <span
+              ><strong>{{ item.productName }}</strong></span
+            >
+            <ion-fab-button> <ion-icon name="arrow-forward"></ion-icon> </ion-fab-button>
+          </section>
+        </app-card>
+      </section>
+      <!-- Marcas de motocicletas -->
+      <section
+        class="app-construir-compra-tab__container__search-assistant__view-by-step"
+        *ngSwitchCase="SECOND_STEP_SPARE_PARTS"
+      >
+        <app-card (clickEvent)="clic(THIRD_STEP_SPARE_PARTS, item.id)" *ngFor="let item of motorcycleBrands; index as i">
+          <section class="app-construir-compra-tab__container__search-assistant__view-by-step__data">
+            <ion-avatar> <img [src]="item.logo" /> </ion-avatar>
+            <span
+              ><strong>{{ item.marca }}</strong></span
+            >
+            <ion-fab-button> <ion-icon name="arrow-forward"></ion-icon> </ion-fab-button>
+          </section>
+        </app-card>
+      </section>
+
+      <!-- Motocicletas -->
+      <section
+        class="app-construir-compra-tab__container__search-assistant__view-by-step"
+        *ngSwitchCase="THIRD_STEP_SPARE_PARTS"
+      >
+        <app-card (clickEvent)="clic(FOUR_STEP_SPARE_PARTS)" *ngFor="let item of motorcycles; index as i">
+          <section class="app-construir-compra-tab__container__search-assistant__view-by-step__data">
+            <ion-avatar> <img [src]="item.logo" /> </ion-avatar>
+            <span
+              ><strong>{{ item.motorcycleName }}</strong></span
+            >
+            <ion-fab-button> <ion-icon name="arrow-forward"></ion-icon> </ion-fab-button>
+          </section>
+        </app-card>
+      </section>
+
+      <!-- Tipos de repuestos -->
+      <!-- Motocicletas -->
+      <section
+        class="app-construir-compra-tab__container__search-assistant__view-by-step"
+        *ngSwitchCase="FOUR_STEP_SPARE_PARTS"
+      >
+        <app-card (clickEvent)="clic(FOUR_STEP_SPARE_PARTS)" *ngFor="let item of productCategories; index as i">
+          <section class="app-construir-compra-tab__container__search-assistant__view-by-step__data">
+            <ion-avatar> <img [src]="item.categoryLogo" /> </ion-avatar>
+            <span
+              ><strong>{{ item.categoryTypeName }}</strong></span
+            >
+            <ion-fab-button> <ion-icon name="arrow-forward"></ion-icon> </ion-fab-button>
+          </section>
+        </app-card>
+      </section>
+    </article>
+  </article>
 </main>

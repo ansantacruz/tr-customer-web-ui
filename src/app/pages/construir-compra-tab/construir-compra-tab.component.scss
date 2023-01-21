@@ -1,11 +1,86 @@
+
+
+
 .app-construir-compra-tab {
     &__container{
-        padding: 1% 1% 1% 1%;
+
         height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+
+      &__header{
+          background-color:#fe2b4a;
+          padding: 20px ;
+          width: 100%;
+          height: 10vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      &__search-assistant{
+        padding:5%;
+        width:100%;
+        height:100%;
+        gap: 10px;
+        overflow-y: auto;
+
+        &__view-by-step{
+          width:100%;
+          height:100%;
+          display:flex;
+          flex-direction: column;
+          justify-content:center;
+          gap:20px;
+          &__data{
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            grid-template-rows: 1fr;
+            gap: 11px 0px;
+            grid-template-areas:
+              ". . .";
+              gap:10px;
+              align-items: center;
+              width:100%;
+              color:#fcfcfc;
+              font-family: 'Viga', sans-serif;
+              ion-fab-button {
+                width:20px;
+                height: 20px;
+                position: relative;
+                top: 3px;
+              }
+          }
+        }
+      }
     }
+}
+
+
+.--step-view {
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(minmax(100px, 150px));
+  grid-gap: 1rem;
+}
+.grid > div {
+  background: #EDE7F6;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #2e313b;
+  border-radius:5px;
+  color:#fcfcfc;
+  font-family: 'Viga', sans-serif;
+  display: flex;
+  justify-content:center;
 }

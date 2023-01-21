@@ -1,1 +1,11 @@
 
+.app-tabs-page {
+    &__container {
+            display:flex;
+            justify-content: space-around;
+            border-top:1px solid #3E3F43;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            background-color: #1f2128; 
+    }
+}

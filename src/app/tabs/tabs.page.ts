@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthServiceService } from 'src/services/auth-service.service';
+import { Router, RouterModule, Routes } from '@angular/router';
+
 
 @Component({
   selector: 'app-tabs',
@@ -11,7 +13,10 @@ export class TabsPage implements OnInit, OnDestroy  {
 
   ROL:string;
   subscription: Subscription;
-  constructor(private readonly authServiceService: AuthServiceService) {}
+  constructor(
+    private readonly authServiceService: AuthServiceService,
+    private readonly router: Router
+  ) {}
 
 
   ngOnInit() {
@@ -23,5 +28,9 @@ export class TabsPage implements OnInit, OnDestroy  {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  onClick(page: string) {
+    this.router.navigate([`/${page}`])
   }
 }
